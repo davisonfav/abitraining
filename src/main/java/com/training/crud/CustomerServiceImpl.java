@@ -41,6 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
             throw new IllegalArgumentException("Customer not found.");
         }
         //update in mongo
+        customerRepository.save(customer);
     }
 
     @Override
@@ -50,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
             throw new IllegalArgumentException("Customer not found.");
         }
 
-        //this.repository.delete(book);
+        customerRepository.delete(foundCustomer.get());
     }
 
     @Override
