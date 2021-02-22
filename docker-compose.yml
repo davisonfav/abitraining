@@ -3,12 +3,12 @@ services:
   database:
     image: 'mongo'
     container_name: 'mongo-training-container'
-    environment:
-      - MONGO_INITDB_DATABASE=training
-      - MONGO_INITDB_ROOT_USERNAME=davison
-      - MONGO_INITDB_ROOT_PASSWORD=123456
+#    environment:
+#      - MONGO_INITDB_DATABASE=training
+#      - MONGO_INITDB_ROOT_USERNAME=davison
+#      - MONGO_INITDB_ROOT_PASSWORD=123456
     volumes:
-      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
-      - ./mongo-volume:/data/db
+#      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - ../mongo-volume:/data/db
     ports:
       - '27017-27019:27017-27019'

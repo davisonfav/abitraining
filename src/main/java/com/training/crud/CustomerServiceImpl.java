@@ -56,11 +56,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> getAll() {
-        Customer foundCustomer = new Customer("00001", "John Doe", true,
-                new DeliveryAddress("5 avenue", "New York", "New York", "12345678"));
-        List<Customer> list = new ArrayList<>();
-        list.add(foundCustomer);
-        return list;
-        //return from mongo
+        return customerRepository.findAll();
     }
 }
